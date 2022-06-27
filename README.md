@@ -57,7 +57,8 @@ hand2 = ['2S','3C','9D','JH','KH']
  player 1: cards with just values 2,4,6,8,A , other pair 2,3,9,J,K. Here who has the highest card on the right last card?. ... the winner is “1” with “A” on the right last card.    
 
 PYTHON PROGRAMMING APPROACH
-![POKER](https://user-images.githubusercontent.com/53232113/175833265-04d9f07b-00d4-463b-9b45-d45dbceb18c3.png)
+![python_6](https://user-images.githubusercontent.com/53232113/175851092-4a6562e3-da5f-41b4-a448-dd35a01b7b97.png)
+
 
 1.	DEFINE STRUCTURES: dictionaries, arrays, etc.
 1.1.	  TWO arrays hand1 and hand2 with 5 elements each. Each element has the card represented with two characters: ‘2K’, the first is the number of the card and the second is the suit 
