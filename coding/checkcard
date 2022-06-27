@@ -1,0 +1,8 @@
+#    
+#    PROCESS 2: CHECK IF VALUES AND SUITES FROM INPUT CARDS ARE CORRECT. IF NOT RETURN A 0 
+#
+    H = hand1 + hand2
+    for i in H:
+        
+        if i[0] not in dict_value or i[1] not in suites:
+                return 0
