@@ -81,7 +81,7 @@ no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
 
 1.9.	Create a temporary  dictionary to store: “ total: and “hicard” values with values zero: Hand_value = {‘total”:0,’hiCard’:0}
 
-2.	CHECK IF CARDS ARE CORRECT.  This will check if cards have values according to cards. The numbers are from 2 to A and suites are S,H,D or C.  If this condition is not true, the program will send a number zero as a result with a message indicating that the cards are not correct, finishing the program.View code [here](coding/checkcards)
+2.	CHECK IF CARDS ARE CORRECT.  This will check if cards have values according to cards. The numbers are from 2 to A and suites are S,H,D or C.  If this condition is not true, the program will send a number zero as a result with a message indicating that the cards are not correct, finishing the program.View code [here](coding/checkcard)
 
 
 3.	EVALUATE HAND1 AND STORE RESULTS. View code [here](coding/hand1)
