@@ -1,0 +1,96 @@
+#First example:  four of a kind  with 2's and 3's wins 3-player 2                
+hand1 = ['2C','2D','2S','2H','TH']
+hand2 = ['3C','3D','3S','3H','JH']
+print(hand1,hand2)
+result = determine_winner(hand1,hand2)
+if result == 0:
+    print('cards are not correct')
+    print(result) 
+print('the winner is: ',result)    
+        
+
+#Second example:  four of a kind h with 3's and 3's  and last card one with T and another with J wins palyer 2 with a J  , eventhough 
+#  this is not real since in a pack of cards there are only 4 cards with number 3.
+hand1 = ['3C','3D','3S','3H','TH']
+hand2 = ['3C','3D','3S','3H','JH']
+print(hand1,hand2)
+result = determine_winner(hand1,hand2)
+if result == 0:
+    print('cards are not correct')
+    print(result) 
+print('the winner  is: ',result)  
+
+#Forth example:  player 1: full house and player 2 with fourofKind  wins player 2. 
+#    full house is 7 with a Total of 3+3+3+2+2 = 13 and fourofKind is 8 and total is J=11                                  
+hand1 = ['3C','3D','3S','2D','2S']
+hand2 = ['4C','4D','4S','4H','JH']
+print(hand1,hand2)
+result = determine_winner(hand1,hand2)
+if result == 0:
+    print('cards are not correct')
+    print(result) 
+print('the winner  is: ',result)    
+
+#fifth example:  player 1: royalflush and player two is straight flush.. wind player 1                                 
+hand1 = ['TC','JC','QC','KC','AC']
+hand2 = ['3C','4C','5C','6C','7C']
+print(hand1,hand2)
+result = determine_winner(hand1,hand2)
+if result == 0:
+    print('cards are not correct')
+    print(result) 
+print('the winner  is: ',result)   
+
+#sixth example:  player 1: two pairs and player two one pair.. wind player 1                                 
+hand1 = ['TC','TH','KC','KD','AC']
+hand2 = ['3C','5D','5C','8S','9H']
+print(hand1,hand2)
+result = determine_winner(hand1,hand2)
+if result == 0:
+    print('cards are not correct')
+    print(result) 
+print('the winner  is: ',result) 
+
+#seventh example:  player 1: consecutive values from 3 to 7 and second player consc. values 5 to 9..
+#wins player 2 becaus it has bigger numbers                                 
+hand1 = ['3C','4H','5D','6S','7C']
+hand2 = ['5C','6D','7C','8S','9H']
+print(hand1,hand2)
+result = determine_winner(hand1,hand2)
+if result == 0:
+    print('cards are not correct')
+    print(result) 
+print('the winner  is: ',result) 
+
+#eight example:  player 1: one pair with a 3, second player one pair with a 2, 
+#wins player 1 because it has bigger numbers on pair: 3                               
+hand1 = ['3C','3D','4H','7S','9D']
+hand2 = ['2S','2C','JD','KH','AS']
+print(hand1,hand2)
+result = determine_winner(hand1,hand2)
+if result == 0:
+    print('cards are not correct')
+    print(result) 
+print('the winner  is: ',result) 
+
+#nineth example:  player 1: one pair, second player one pair with same number, 
+#wins player 2 because it has bigger numbers on last card : "A"                               
+hand1 = ['2C','2D','4H','7S','9D']
+hand2 = ['2S','2C','JD','KH','AS']
+print(hand1,hand2)
+result = determine_winner(hand1,hand2)
+if result == 0:
+    print('cards are not correct')
+    print(result) 
+print('the winner  is: ',result) 
+
+#tenth example:  player 1: cards with just values 2,4,6,8,A , other pair 1,3,9,J,K 
+#Here who has the highest card... the winner is A with highest card A                               
+hand1 = ['2C','4D','6H','8S','AD']
+hand2 = ['2S','3C','9D','JH','KH']
+print(hand1,hand2)
+result = determine_winner(hand1,hand2)
+if result == 0:
+    print('cards are not correct')
+    print(result) 
+print('the winner  is: ',result) 
