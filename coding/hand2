@@ -1,0 +1,21 @@
+#   PROCESS 4 EVALUATE HAND2 
+    """
+    This process, with the array hand2,  initialize dictionary Hand_value, uses a function "getValueOfHand" to find out
+    which game the hand has, and two other values "total" and "Hicard".
+    Finally saves the value of the game in dictionaries 
+    "Value_hands['SecondHand'], totals['SecondHand'] and hiCards['SecondHand']
+    """   
+    
+    # initialize dictionary Hand_value with zero
+    Hand_value['total'] = 0
+    Hand_value['Hicard'] = 0
+    
+    # find values of valueHand which is the game of the card, and values of Hand_value dictionary
+    valueHand = getValueofHand(hand2,Hand_value,Hand,dict_value)
+    
+    #saves the value of the game in dictionaries 
+    #"Value_hands['SecondHand'], totals['SecondHand'] and hiCards['SecondHand']
+    Value_hands['SecondHand'] = valueHand
+    totals['SecondHand'] = Hand_value['total']
+    hiCards['SecondHand'] = Hand_value['Hicard']
+#    print('second hand: ',Value_hands,totals,hiCards)
