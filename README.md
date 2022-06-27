@@ -117,22 +117,31 @@ With these inputs the function evaluales who wins, first or second hand. If firs
 
 ['2C', '2D', '2S', '2H', 'TH'] ['3C', '3D', '3S', '3H', 'JH']
 the winner is:  2
+
 ['3C', '3D', '3S', '3H', 'TH'] ['3C', '3D', '3S', '3H', 'JH']
 the winner  is:  2
+
 ['3C', '3D', '3S', '2D', '2S'] ['4C', '4D', '4S', '4H', 'JH']
 the winner  is:  2
+
 ['TC', 'JC', 'QC', 'KC', 'AC'] ['3C', '4C', '5C', '6C', '7C']
 the winner  is:  1
+
 ['TC', 'TH', 'KC', 'KD', 'AC'] ['3C', '5D', '5C', '8S', '9H']
 the winner  is:  1
+
 ['3C', '4H', '5D', '6S', '7C'] ['5C', '6D', '7C', '8S', '9H']
 the winner  is:  2
+
 ['3C', '3D', '4H', '7S', '9D'] ['2S', '2C', 'JD', 'KH', 'AS']
 the winner  is:  1
+
 ['2C', '2D', '4H', '7S', '9D'] ['2S', '2C', 'JD', 'KH', 'AS']
 the winner  is:  2
+
 ['2C', '4D', '6H', '8S', 'AD'] ['2S', '3C', '9D', 'JH', 'KH']
 the winner  is:  1
+
 
  View code [here](coding/print)
 
