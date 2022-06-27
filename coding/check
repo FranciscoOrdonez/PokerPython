@@ -1,0 +1,48 @@
+#   PROCESS 5 evaluate who wins: firstHand or SecondHand
+    
+    winner = whoWins(Value_hands,totals,hiCards)
+    return winner
+    
+#
+#  define who wins
+#
+def whoWins(Value_hands,totals,hiCards):
+    """
+    FUNCTION whowins has as inputs three dictionaries:  Value_hands, totals and hiCards, each has values
+    in dictionaries on first hand and second hand.
+    1. VAlue_hands:  values the game. The highest value has game 'RoyalFlash' which is '10' and the lowest value is 
+    "nothing" with a value of '1' (see dictionary Hand)
+    2. totals: has the totals for game.  If game has one pair of 3's, the totals is 3*2 = 6 or if hand is
+    [2C 3H 4C 5S 6D], totals is number of last card which is '6'
+    3. HighCard: is the highest card of hand. If ['2C','2D','2S','2H','TH'], there are two pairs, the high card
+    is the last card which is 'T' and represents a number '10'.
+    With these inputs the function evaluales who wins, first or second hand.
+    If first hand wins it returns a number '1'. If second hand wins it returns a number "2"
+    
+    input:  dictionaries Value_hands, totals and hiCards
+    output: number 1 or number 2
+    """
+    
+    value1 = Value_hands['FirstHand']
+    value2 = Value_hands['SecondHand']
+    total1 = totals['FirstHand']
+    total2 = totals['SecondHand']
+    hicards1 = hiCards['FirstHand']
+    hicards2 = hiCards['SecondHand']
+    if value1 > value2:
+        return 1
+    else:
+        if value1 < value2:
+            return 2
+        else:
+            if total1 > total2:
+                return 1
+            else:
+                if total1 < total2:
+                    return 2
+                else:
+                    if hicards1 > hicards2:
+                        return 1
+                    else:
+                        if hicards1 < hicards2:
+                            return 2
