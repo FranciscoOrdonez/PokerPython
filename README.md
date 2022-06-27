@@ -5,7 +5,7 @@ How to make a Python program to determine the winner given two set of cards per 
 2.	one pair: two cards of the same value
 3.	two pairs: two different pairs
 4.	three of a kind: three cards of same value
-5.	straight: all cards consecutive value 6: flush: all cards of same suit 7: full house: three of a kind(same value) and a pair
+5.	straight: all cards consecutive value 6: flush: all cards of same suit 7: full house: three of a kind(same value) and a pair.
 6.	four of a kind: four cards of the same value
 7.	straight flush: all cards consecutive value same suit
 8.	royal flash: ten, jack, queen, king, ace same suit
