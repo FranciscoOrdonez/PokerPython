@@ -60,7 +60,7 @@ PYTHON PROGRAMMING APPROACH
 ![python_6](https://user-images.githubusercontent.com/53232113/175851092-4a6562e3-da5f-41b4-a448-dd35a01b7b97.png)
 
 
-1.	DEFINE STRUCTURES: dictionaries, arrays, etc.
+1.	DEFINE STRUCTURES: dictionaries, arrays, etc.View code [here](coding/structure)
 
 1.1.	  TWO arrays hand1 and hand2 with 5 elements each. Each element has the card represented with two characters: ‘2K’, the first is the number of the card and the second is the suit.
 
