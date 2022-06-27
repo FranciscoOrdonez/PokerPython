@@ -11,11 +11,14 @@ How to make a Python program to determine the winner given two set of cards per 
 6.	four of a kind: four cards of the same value.
 7.	straight flush: all cards consecutive value same suit.
 8.	royal flash: ten, jack, queen, king, ace same suit.
+
+
 The cards are value: 2,3,4,5,6,7,8,9,10,Jack,Queen,King,Ace.
 Cards are suited as : (S)Spade, (H)Hearts, (D)diamonds, (C)clubs.
 The games have a value depending on:
 Hand = {"nothing":1, "onePair":2, "twoPairs":3,"threeKind": 4, "Straight":5,
 #"Flush":6,"FullHouse":7,"FourKind":8,"StraightFlush":9,"RoyalFlush":10}, being the highest “RoyalFlush’ with 10, and the lowest “nothing” with 1.
+
 If players have the same ranked hand, the rank made up of the highest value wins, example a pair of eights beats a pair of fives.
 But if two ranks tie, for example both have a pair of queens, then highest card in each hand are compared. If the highest card tie, then the next highest card are compared, an so on.
 
