@@ -62,24 +62,24 @@ PYTHON PROGRAMMING APPROACH
 
 1.	DEFINE STRUCTURES: dictionaries, arrays, etc.
 
-3.1.	  TWO arrays hand1 and hand2 with 5 elements each. Each element has the card represented with two characters: ‘2K’, the first is the number of the card and the second is the suit.
+1.1.	  TWO arrays hand1 and hand2 with 5 elements each. Each element has the card represented with two characters: ‘2K’, the first is the number of the card and the second is the suit.
 
-3.2.	define values for cards in a dictionary: dict_value={'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'T':10,'J':11,'Q':12,'K':13,'A':14}
+1.2.	define values for cards in a dictionary: dict_value={'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'T':10,'J':11,'Q':12,'K':13,'A':14}
 
-3.3.	Define  suites for cards  in an array  suites : = ['S','H','D','C']
+1.3.	Define  suites for cards  in an array  suites : = ['S','H','D','C']
 
-3.4.	create a dictionary to store hand values depending on play or game:  Hand = {"nothing":1, "onePair":2, "twoPairs":3,"threeKind": 4, "Straight":5,"Flush":6,"FullHouse":7,"FourKind":8,"StraightFlush":9,"RoyalFlush":10}
+1.4.	create a dictionary to store hand values depending on play or game:  Hand = {"nothing":1, "onePair":2, "twoPairs":3,"threeKind": 4, "Straight":5,"Flush":6,"FullHouse":7,"FourKind":8,"StraightFlush":9,"RoyalFlush":10}
 
-3.5.	Define values for first and second hand and initiatize it to zero in dictionary Value_hands = {‘FirstHand’:0,’SecondHand’:0}
+1.5.	Define values for first and second hand and initiatize it to zero in dictionary Value_hands = {‘FirstHand’:0,’SecondHand’:0}
 
-3.6.	Define totals  for first and second hand and initiatize it to zero in dictionary totals = {‘FirstHand’:0,’SecondHand’:0}
+1.6.	Define totals  for first and second hand and initiatize it to zero in dictionary totals = {‘FirstHand’:0,’SecondHand’:0}
 
-3.7.	Define hiCards  for first and second hand and initiatize it to zero in dictionary hiCards = {‘FirstHand’:0,’SecondHand’:0}
+1.7.	Define hiCards  for first and second hand and initiatize it to zero in dictionary hiCards = {‘FirstHand’:0,’SecondHand’:0}
 
-3.8.	Define a dictionary to store number of cards per suite in a game and initialize it to zero:
+1.8.	Define a dictionary to store number of cards per suite in a game and initialize it to zero:
 no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
 
-3.9.	Create a temporary  dictionary to store: “ total: and “hicard” values with values zero: Hand_value = {‘total”:0,’hiCard’:0}
+1.9.	Create a temporary  dictionary to store: “ total: and “hicard” values with values zero: Hand_value = {‘total”:0,’hiCard’:0}
 
 2.	CHECK IF CARDS ARE CORRECT.  This will check if cards have values according to cards. The numbers are from 2 to A and suites are S,H,D or C.  If this condition is not true, the program will send a number zero as a result with a message indicating that the cards are not correct, finishing the program.
 
@@ -101,7 +101,7 @@ no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
 
 4.3.	Finally saves the value of the game in three dictionaries: 1- "Value_hands['SecondHand'], 2- totals['SecondHand'] and  3- hiCards['SecondHand'].
 
-4.	CHECK WHO WINS?
+5.	CHECK WHO WINS?
 
    -	FUNCTION "whowins" has as inputs three dictionaries:  Value_hands, totals and hiCards, each has valuesin dictionaries on first hand and second hand.
 
@@ -113,7 +113,7 @@ no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
        
 With these inputs the function evaluales who wins, first or second hand. If first hand wins it returns a number '1'. If second hand wins it returns a number "2".
 
-5.	Print results:  ‘0’: IF CARD ARE INCORRECT, ‘1’ IF HAND1 WINS, ‘2’ IF HAND2 WINS
+6.	Print results:  ‘0’: IF CARD ARE INCORRECT, ‘1’ IF HAND1 WINS, ‘2’ IF HAND2 WINS
 
 
 
