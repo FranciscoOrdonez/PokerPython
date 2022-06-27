@@ -81,10 +81,10 @@ no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
 
 1.9.	Create a temporary  dictionary to store: “ total: and “hicard” values with values zero: Hand_value = {‘total”:0,’hiCard’:0}
 
-2.	CHECK IF CARDS ARE CORRECT.  This will check if cards have values according to cards. The numbers are from 2 to A and suites are S,H,D or C.  If this condition is not true, the program will send a number zero as a result with a message indicating that the cards are not correct, finishing the program.
+2.	CHECK IF CARDS ARE CORRECT.  This will check if cards have values according to cards. The numbers are from 2 to A and suites are S,H,D or C.  If this condition is not true, the program will send a number zero as a result with a message indicating that the cards are not correct, finishing the program.View code [here](coding/checkcards)
 
 
-3.	EVALUATE HAND1 AND STORE RESULTS
+3.	EVALUATE HAND1 AND STORE RESULTS. View code [here](coding/hand1)
 
 
 3.1.	With the array hand1,  initialize dictionary Hand_value.
@@ -93,7 +93,7 @@ no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
 
 3.3.	Finally saves the value of the game in three dictionaries: 1- "Value_hands['FirstHand'], 2- totals['FirstHand'] and  3- hiCards['FirstHand']
 
-4.	EVALUATE HAND2 AND STORE RESULTS
+4.	EVALUATE HAND2 AND STORE RESULTS. View code [here](coding/hand2)
 
 4.1.	With the array hand2,  initialize dictionary Hand_value.
 
@@ -101,7 +101,7 @@ no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
 
 4.3.	Finally saves the value of the game in three dictionaries: 1- "Value_hands['SecondHand'], 2- totals['SecondHand'] and  3- hiCards['SecondHand'].
 
-5.	CHECK WHO WINS?
+5.	CHECK WHO WINS?. View code [here](coding/check)
 
    -	FUNCTION "whowins" has as inputs three dictionaries:  Value_hands, totals and hiCards, each has valuesin dictionaries on first hand and second hand.
 
@@ -113,7 +113,32 @@ no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
        
 With these inputs the function evaluales who wins, first or second hand. If first hand wins it returns a number '1'. If second hand wins it returns a number "2".
 
-6.	Print results:  ‘0’: IF CARD ARE INCORRECT, ‘1’ IF HAND1 WINS, ‘2’ IF HAND2 WINS
+6.	Print results:  ‘0’: IF CARD ARE INCORRECT, ‘1’ IF HAND1 WINS, ‘2’ IF HAND2 WINS.  View some examples:
+
+['2C', '2D', '2S', '2H', 'TH'] ['3C', '3D', '3S', '3H', 'JH']
+the winner is:  2
+['3C', '3D', '3S', '3H', 'TH'] ['3C', '3D', '3S', '3H', 'JH']
+the winner  is:  2
+['3C', '3D', '3S', '2D', '2S'] ['4C', '4D', '4S', '4H', 'JH']
+the winner  is:  2
+['TC', 'JC', 'QC', 'KC', 'AC'] ['3C', '4C', '5C', '6C', '7C']
+the winner  is:  1
+['TC', 'TH', 'KC', 'KD', 'AC'] ['3C', '5D', '5C', '8S', '9H']
+the winner  is:  1
+['3C', '4H', '5D', '6S', '7C'] ['5C', '6D', '7C', '8S', '9H']
+the winner  is:  2
+['3C', '3D', '4H', '7S', '9D'] ['2S', '2C', 'JD', 'KH', 'AS']
+the winner  is:  1
+['2C', '2D', '4H', '7S', '9D'] ['2S', '2C', 'JD', 'KH', 'AS']
+the winner  is:  2
+['2C', '4D', '6H', '8S', 'AD'] ['2S', '3C', '9D', 'JH', 'KH']
+the winner  is:  1
+
+ View code [here](coding/print)
+
+
+
+   
 
 
 
