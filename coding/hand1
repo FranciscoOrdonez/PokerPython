@@ -1,0 +1,279 @@
+#   PROCESS 3 EVALUATE HAND1  
+    """
+    This process, with the array hand1,  initialize dictionary Hand_value, uses a function "getValueOfHand" to find out
+    which game the hand has, and two other values "total" and "Hicard".
+    Finally saves the value of the game in dictionaries 
+    "Value_hands['FirstHand'], totals['FirstHand'] and hiCards['FirstHand']
+    """
+    # initialize dictionary Hand_value with zero
+    Hand_value['total'] = 0
+    Hand_value['Hicard'] = 0
+    
+    # find values of valueHand which is the game of the card, and values of Hand_value dictionary
+    valueHand = getValueofHand(hand1,Hand_value,Hand,dict_value)
+    
+    #saves the value of the game in dictionaries 
+    #"Value_hands['FirstHand'], totals['FirstHand'] and hiCards['FirstHand']
+    Value_hands['FirstHand'] = valueHand   
+    totals['FirstHand'] = Hand_value['total']
+    hiCards['FirstHand'] = Hand_value['Hicard']
+#    print('first hand: ',Value_hands,totals,hiCards)
+
+#define which game has the hand. The games are:
+# Hand = {"nothing":1, "onePair":2, "twoPairs":3,"threeKind": 4, "Straight":5,
+#"Flush":6,"FullHouse":7,"FourKind":8,"StraightFlush":9,"RoyalFlush":10}
+    
+def getValueofHand(hand,Hand_value,Hand,dict_value):
+    """function getValueOfHand: it has as input the hand of the cards, Hand and dcit_value
+        and returns a value of the game and in dictionary Hand_value returns values
+        of totals and Hicard.  With these last values, the program can
+        use to find the winner
+        Input:  hand, Hand and dict_value
+        Output:  get a number with Hand(and the game) and returns values in
+        doctionary Hand_value
+        """
+    no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
+    
+    if RoyalFlush(hand,no_Suites,Hand_value,dict_value) == True:
+        return(Hand["RoyalFlush"])
+    else:
+        if StraightFlush(hand,no_Suites,Hand_value,dict_value) == True:
+            return(Hand["StraightFlush"])
+        else:    
+            if FourOfKind(hand,Hand_value,dict_value) == True:
+                return(Hand["FourKind"])
+            else:
+                if FullHouse(hand,Hand_value,dict_value) == True:
+                    return(Hand['FullHouse'])
+                else:
+                    if Flush(hand,no_Suites,Hand_value,dict_value) == True:
+                        return(Hand['Flush'])
+                    else:
+                        if Straight(hand,Hand_value,dict_value) == True:
+                            return(Hand['Straight'])
+                        else:
+                            if threeKind(hand,Hand_value,dict_value) == True:
+                                return(Hand["threeKind"])
+                            else:
+                                if twoPairs(hand,Hand_value,dict_value)  == True:
+                                    return(Hand["twoPairs"])
+                                else:
+                                    if onePair(hand,Hand_value,dict_value)  == True:
+                                        return(Hand["onePair"])
+                                    else:
+                                        if nothing(hand,Hand_value,dict_value)  == True:
+                                            return(Hand["nothing"])
+    
+
+
+ 
+            
+    
+    
+
+# getNoSuites sums the number of suites the hand has. For example if hand is: ['TH','JH','QH','KH','AH'] then 
+#     there are five cards with Hearts, the sum will be returned as 5
+def getNoSuites(hand1,no_Suites):
+#   no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
+    no_Suites['spadeSum']=0
+    no_Suites['heartSum']=0
+    no_Suites['diamondSum']=0
+    no_Suites['clubSum']=0
+    for i in hand1:
+        if i[1] == 'S':
+            no_Suites['spadeSum'] += 1
+        if i[1] == 'H':
+            no_Suites['heartSum'] += 1
+        if i[1] == 'D':
+            no_Suites['diamondSum'] += 1    
+        if i[1] == 'C':
+            no_Suites['clubSum'] += 1
+            
+            
+#royal Flash: all cards consecutive value same suit with T J Q K A
+
+def RoyalFlush(hand1,no_Suites,Hand_value,dict_value):
+#    find number of suites in a hand 
+    getNoSuites(hand1, no_Suites)
+    x = hand1
+    n_sui = ((no_Suites['spadeSum'] == 5) or
+         (no_Suites['heartSum'] == 5) or
+         (no_Suites['diamondSum'] == 5) or
+         (no_Suites['clubSum'] == 5))
+    consec = (int(dict_value[x[0][0]]) + 1 == int(dict_value[x[1][0]])
+          and int(dict_value[x[1][0]]) + 1 == int(dict_value[x[2][0]])
+          and int(dict_value[x[2][0]]) + 1 == int(dict_value[x[3][0]])
+          and int(dict_value[x[3][0]]) + 1 == int(dict_value[x[4][0]]))
+    last_num = (x[0][0] == 'T' and x[1][0] == 'J' and x[2][0] == 'Q' and x[3][0] == 'K' and x[4][0] == 'A')
+    if n_sui and consec and last_num:
+        Hand_value['total'] = int(dict_value[x[4][0]])
+        return True
+    else:
+        return False  
+    
+    
+#straight Flash: all cards consecutive value same suit
+
+def StraightFlush(hand1,no_Suites,Hand_value,dict_value):
+    x = hand1
+#    find number of suites in a hand    
+    getNoSuites(hand1, no_Suites)
+    n_sui = ((no_Suites['spadeSum'] == 5) or
+         (no_Suites['heartSum'] == 5) or
+         (no_Suites['diamondSum'] == 5) or
+         (no_Suites['clubSum'] == 5))
+    consec = (int(dict_value[x[0][0]]) + 1 == int(dict_value[x[1][0]])
+          and int(dict_value[x[1][0]]) + 1 == int(dict_value[x[2][0]])
+          and int(dict_value[x[2][0]]) + 1 == int(dict_value[x[3][0]])
+          and int(dict_value[x[3][0]]) + 1 == int(dict_value[x[4][0]]))
+    if  n_sui and consec:
+        Hand_value['total'] = int(dict_value[x[4][0]])
+        return True
+    else:
+        return False           
+            
+            
+# Four of a Kind: four cards of same value.  Input the hand output: boolean Yes if it has four cards of same value
+#   and boolean No if it has not.
+
+def FourOfKind(hand1,Hand_value,dict_value):
+    x = hand1
+    
+    if x[0][0] == x[1][0] and x[0][0] == x[2][0] and x[0][0] == x[3][0]:
+        
+        
+        Hand_value['total'] = int(dict_value[x[0][0]])* 4
+        Hand_value['Hicard'] = int(dict_value[x[4][0]])
+        
+        return True
+    elif x[1][0] == x[2][0] and x[1][0] == x[3][0] and x[1][0] == x[4][0]:
+        Hand_value['total'] = int(dict_value[x[1][0]]) * 4
+        Hand_value['Hicard'] = int(dict_value[x[0][0]])
+         
+        return True
+    else:
+         
+        return False
+    
+    
+#Full house: three of a kind and a pair
+#  either your have 33322 or 22233
+def FullHouse(hand1,Hand_value,dict_value):
+    x = hand1
+    
+    if ((x[0][0] == x[1][0] and x[0][0] == x[2][0] and x[3][0] == x[4][0])
+        or(x[2][0] == x[3][0] and x[3][0] == x[4][0] and x[0][0] == x[1][0])):
+                
+        Hand_value['total'] = int(dict_value[x[0][0]] + dict_value[x[1][0]] + dict_value[x[2][0]] + dict_value[x[3][0]] + dict_value[x[4][0]])
+        return True
+    
+    else:
+        return False
+                                  
+# Flush: all suits are the same example 1H 3H 5H 7H AH
+
+def Flush(hand,no_Suites,Hand_value,dict_value):
+#    find number of suites in a hand    
+    getNoSuites(hand, no_Suites)
+    if (no_Suites['spadeSum'] == 5 or no_Suites['heartSum'] == 5 or no_Suites['diamondSum'] == 5
+         or no_Suites['clubSum'] == 5):
+        Hand_value['total'] = int(dict_value[x[4][0]])
+        return True
+    else:
+        return False
+    
+#Straight:    all cards consecutive value....   ie:   2C 3H 4C 5S 6D    
+def Straight(hand1,Hand_value,dict_value):
+    x = hand1
+    
+    if (int(dict_value[x[0][0]]) + 1 == int(dict_value[x[1][0]])
+          and int(dict_value[x[1][0]]) + 1 == int(dict_value[x[2][0]])
+          and int(dict_value[x[2][0]]) + 1 == int(dict_value[x[3][0]])
+          and int(dict_value[x[3][0]]) + 1 == int(dict_value[x[4][0]])):
+        Hand_value['total'] = int(dict_value[x[4][0]])
+        return True
+    else:
+        return False 
+    
+#    threeKind: three of a kin which is 3 cards of same value
+#    there are three possibilities: elements [0 1 2] or [1 2 3] or [2 3 4]
+#    and card 3 is always in three possibilities
+def threeKind(hand1,Hand_value,dict_value):
+    x = hand1
+    
+    if ((x[0][0] == x[1][0] and x[1][0] == x[2][0]) or
+        (x[1][0] == x[2][0] and x[2][0] == x[3][0])):
+            Hand_value['total'] = int(dict_value[x[2][0]])
+            Hand_value['Hicard'] = int(dict_value[x[4][0]])
+            return True
+    else:
+        if (x[2][0] == x[3][0] and x[3][0] == x[4][0]):
+            Hand_value['total'] = int(dict_value[x[2][0]])
+            Hand_value['Hicard'] = int(dict_value[x[1][0]])
+            return True
+        else:
+            return False
+        
+#    twoPairs: two different pairs
+#    some alternatives:
+#    1-   if [1 2] and [3 4]
+#   2-    if [1,2] and [4,5]
+#    3-   if [2 3] and [4 5]
+#  with two pairs,  2nd card always part of 1 pair and 4th card always part of 2 pair
+def twoPairs(hand1,Hand_value,dict_value):
+    x = hand1
+    
+    if (x[0][0] == x[1][0] and x[3][0] == x[4][0]):
+        Hand_value['total'] = int(dict_value[x[1][0]]*2 + dict_value[x[3][0]]*2)
+        Hand_value['Hicard'] = int(dict_value[x[2][0]])
+        return True
+    else:
+        if (x[0][0] == x[1][0] and x[2][0] == x[3][0]):
+            Hand_value['total'] = int(dict_value[x[1][0]]*2 + dict_value[x[3][0]]*2)
+            Hand_value['Hicard'] = int(dict_value[x[4][0]])
+            return True
+        else:
+            if (x[1][0] == x[2][0] and x[3][0] == x[4][0]):
+                Hand_value['total'] = int(dict_value[x[1][0]]*2 + dict_value[x[3][0]]*2)
+                Hand_value['Hicard'] = int(dict_value[x[0][0]])
+                return True
+            else:
+                return False
+            
+            
+#    onePair: two cards same value
+#    some alternatives: [0,1], [1,2], [2,3], [3,4]
+#    
+def onePair(hand1,Hand_value,dict_value):
+    x = hand1
+    
+    if x[0][0] == x[1][0]:
+        Hand_value['total'] = int(dict_value[x[0][0]]*2)
+        Hand_value['Hicard'] = int(dict_value[x[4][0]])
+        return True
+    else:
+        if x[1][0] == x[2][0]:
+            Hand_value['total'] = int(dict_value[x[1][0]]*2)
+            Hand_value['Hicard'] = int(dict_value[x[4][0]])
+            return True
+        else:
+            if x[2][0] == x[3][0]:
+                Hand_value['total'] = int(dict_value[x[2][0]]*2)
+                Hand_value['Hicard'] = int(dict_value[x[4][0]])
+                return True
+            else:
+                if x[3][0] == x[4][0]:
+                    Hand_value['total'] = int(dict_value[x[3][0]]*2)
+                    Hand_value['Hicard'] = int(dict_value[x[2][0]])
+                    return True
+                else:
+                    return False
+                
+def nothing(hand1,Hand_value,dict_value):
+    x = hand1
+    Hand_value['Hicard'] = int(dict_value[x[4][0]])
+    return True
+                
+              
+        
+                                  
