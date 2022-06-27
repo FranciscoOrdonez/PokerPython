@@ -1,16 +1,18 @@
 # PokerPython
 POKER GAME with Python
+
 How to make a Python program to determine the winner given two set of cards per the following:   In a card game poker a hand consist of five cards that are ranked from lowest to highest in the following order:
+
 1.	high card: highest card value
 2.	one pair: two cards of the same value
 3.	two pairs: two different pairs
 4.	three of a kind: three cards of same value
 5.	straight: all cards consecutive value 6: flush: all cards of same suit 7: full house: three of a kind(same value) and a pair.
-6.	four of a kind: four cards of the same value
-7.	straight flush: all cards consecutive value same suit
-8.	royal flash: ten, jack, queen, king, ace same suit
-The cards are value: 2,3,4,5,6,7,8,9,10,Jack,Queen,King,Ace
-Cards are suited as : (S)Spade, (H)Hearts, (D)diamonds, (C)clubs
+6.	four of a kind: four cards of the same value.
+7.	straight flush: all cards consecutive value same suit.
+8.	royal flash: ten, jack, queen, king, ace same suit.
+The cards are value: 2,3,4,5,6,7,8,9,10,Jack,Queen,King,Ace.
+Cards are suited as : (S)Spade, (H)Hearts, (D)diamonds, (C)clubs.
 The games have a value depending on:
 Hand = {"nothing":1, "onePair":2, "twoPairs":3,"threeKind": 4, "Straight":5,
 #"Flush":6,"FullHouse":7,"FourKind":8,"StraightFlush":9,"RoyalFlush":10}, being the highest “RoyalFlush’ with 10, and the lowest “nothing” with 1.
@@ -18,12 +20,17 @@ If players have the same ranked hand, the rank made up of the highest value wins
 But if two ranks tie, for example both have a pair of queens, then highest card in each hand are compared. If the highest card tie, then the next highest card are compared, an so on.
 
 Inputs and outputs
+
 Inputs:
+
 Two arrays of five elements with a name of hand, each element represents a card which  is a string of two characters, a number and a suit.  Example: hand1 = ['TC','JC','QC','KC','AC'] and hand2 = ['3C','4C','5C','6C','7C'].  The first element of hand1 is “TC’ which represent the card with number 10 and suit ‘clubs’. One important condition of the array inputs is that they have to be sorted in ascending order.
 Output:
+
 There are various games(expressed in a dictionary):
+
 Hand = {"nothing":1, "onePair":2, "twoPairs":3,"threeKind": 4, "Straight":5,
 #"Flush":6,"FullHouse":7,"FourKind":8,"StraightFlush":9,"RoyalFlush":10}
+
 The output is a number 1 or number 2, which represents which hand is the winner  out of the two hands. In the example above (hand1 = ['TC','JC','QC','KC','AC'] and hand2 = ['3C','4C','5C','6C','7C']) the winner is hand1.  The hand1 is a “royal flash”,  it has same suit on all cards and consecutive  numbers: ten, jack, queen, king and ace.  The hand2 is a “StraightFlush”, it has all cards with consecutive values staring in ‘3’ and ending in 7 with suit “C”(clubs) with all cards.
 “RoyalFlush” has value 10 and “StraightFlush” has value 9, and “RoyalFlush’ has bigger number and wins. The winner is hand1 or just “1”.
 Let’s see who wins between one game with   player 1: full house(three of a kind and a pair) and player 2 with game “fourofKind”(four cards of the same value).  The hands are:                          
