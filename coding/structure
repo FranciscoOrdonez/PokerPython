@@ -1,0 +1,26 @@
+1 input arrays hands1 and hands2 ['2C','5H','7S','JD'] 
+#         
+
+#  2 define values for cards in a dictionary
+    dict_value={'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'T':10,'J':11,'Q':12,'K':13,'A':14}
+    
+#  3 define suites available in cards: S=spade, H: hearts, D: diamond, and C: club    
+    suites = ['S','H','D','C']
+
+#  4  create a dictionary to store hand values depending on play
+    Hand = {"nothing":1, "onePair":2, "twoPairs":3,"threeKind": 4, "Straight":5,"Flush":6,"FullHouse":7,"FourKind":8,"StraightFlush":9,"RoyalFlush":10}
+
+#  5 Define values for first and second hand and initiatize it to zero in dictionary  
+    Value_hands = {'FirstHand':0, "SecondHand": 0}
+    
+#  6 Define totals for first and second hand and initiatize it to zero in dictionary
+    totals = {'FirstHand':0, 'SecondHand':0}
+    
+#  7 Define hiCards for first and second hand and initiatize it to zero in dictionary    
+    hiCards = {'FirstHand':0, 'SecondHand':0}
+    
+#  8 Define a dictionary to store number of cards per suite in a game and initialize it to zero    
+    no_Suites = {'spadeSum':0,'heartSum':0, 'diamondSum':0,'clubSum': 0}
+    
+#  9 define a dictionary to store temporarily values of total and hicard for each hand
+    Hand_value = {'total':0,'Hicard':0} 
