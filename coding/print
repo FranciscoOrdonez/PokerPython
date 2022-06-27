@@ -1,3 +1,26 @@
+#determine_winner receives hand1 and hand2 as parameters and returns a number as output:
+#  0 = if cards are not correct
+#  1  if hand1 wins 
+#  2 if hand2 wins
+
+def determine_winner(hand1, hand2):
+    """
+    function determine_winner
+    Description:  in a play of poker with two hands, this function takes two
+         paramenters which are two hands of five cards each represented by two arrays, and 
+         get an output of thw winner of poker, 1 if the first hand wins and 2 if the second
+         hands wind.  Returns also a 0 if the cards received are not correct.  
+   input: two arrays hand1 and hand2 with structure: ['2S','3H','6D,'7S','9H']
+          TWO ARRAYS OF FIVE ELEMENTS
+         AND EACH ELEMENT IS A STRING OF 2 CHARACTERS 'XY'
+         where 'X' represent the number of the card with values 2 to A
+         and 'Y' represents the suit of the card with characters  ['S','H','D','C']
+   
+   output:  0= if cards are not correct
+            1= if hand1 wins
+            2= if hand2 wins
+    """
+    
 #First example:  four of a kind  with 2's and 3's wins 3-player 2                
 hand1 = ['2C','2D','2S','2H','TH']
 hand2 = ['3C','3D','3S','3H','JH']
